@@ -1,0 +1,18 @@
+{
+    "HOST": "",
+    "DB_PORT": 43649,
+    "USER": "",
+    "PASSWORD": "",
+    "DATABASE": "",
+    "REPORT_IMAGE": {
+    "URL": "http://localhost:3002/api/imagess"
+
+  },
+  "REPORT_PDF": {
+    "URL": "http://localhost:3002/api/pdf"
+    
+  }
+  
+  }
+
+

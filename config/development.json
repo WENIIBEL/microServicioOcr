@@ -1,0 +1,8 @@
+{
+    "HOST": "autorack.proxy.rlwy.net",
+    "PORT": 43649,
+    "USER": "root",
+    "DB_TYPE":"mysql",
+    "PASSWORD": "SbpJEbXHerebmsLCHUWiqfYpZWdJnuSj", 
+    "DATABASE": "railway"
+  }
