@@ -1,14 +1,12 @@
 
 export class  TextoOcr {
-    id:number ;
+    id?:number ;
     id_prescription:number ;
     text: string;
 
-    /**
-     *
-     */
+   
     constructor(info:{
-        id:number;
+        id?:number;
         id_prescription:number;
         text: string
     }) {

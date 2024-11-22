@@ -7,9 +7,8 @@ export class ImageRepository  {
 
     async create(body:TextoOcr): Promise< TextoOcr| null > {
         const connection = getPoolConnection()
-        const querySql: string = `INSERT INTO  texto_ocr (id, id_prescription, text) VALUES (?,?,?)`
+        const querySql: string = `INSERT INTO  texto_ocr ( id_prescription, text) VALUES (?,?)`
         const values: Array<string|number> = [
-            body.id,
             body.id_prescription,
             body.text
         ]

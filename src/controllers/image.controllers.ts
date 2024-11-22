@@ -11,8 +11,7 @@ interface MulterRequest extends Request {
 } 
 
 export const CtrlImage = async (req:MulterRequest, res:Response):Promise<void> => {
-    
-    
+ 
     if (!req.file) {
         res.status(400).send("no se cargó ningú archivo");
         return;
@@ -23,19 +22,25 @@ export const CtrlImage = async (req:MulterRequest, res:Response):Promise<void> =
         const worker = await createWorker();
         const ret = await worker.recognize(req.file?.path); // alamcena el resultado del conocimiento optico
         const text = ret.data.text;
-        console.log(ret.data.text);
-        console.log("funciona")
         await worker.terminate();
 
         const imageRepository = new ImageRepository()
-        const textoOcr: TextoOcr = {
-          id: 'generate-id',
-          id_prescription: 'prescription-id',
-          text: text
+
+        console.log(text)
+
+        const textoOcr: TextoOcr ={
+          id_prescription: req.body.id_prescription,
+          text:text
         }
 
-      
-        res.status(200).json({ message: "texto reconocido:", text });
+        const saveImage = await imageRepository.create(textoOcr)
+
+        if (saveImage) {
+          res.status(200).json({message:"texto reconocido y guardado"})
+        }else {
+          res.status(500).send("Error desconocido al procesar la imagen")
+        }
+         
         
     }catch (error) {
         if (error instanceof Error) {
