@@ -29,7 +29,6 @@ export const CtrlImage = async (req:MulterRequest, res:Response):Promise<void> =
         console.log(text)
 
         const textoOcr: TextoOcr ={
-          id_prescription: req.body.id_prescription,
           text:text
         }
 
