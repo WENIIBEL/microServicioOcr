@@ -2,6 +2,8 @@
 import { Request,Response } from "express";
 import pdfParse from 'pdf-parse';
 import fs, { promises } from 'fs';
+import { TextoOcr } from "../domain/models/textoOcr";
+import { PdfRepository } from "../repositories/pdf.repository";
 
 
 interface MulterRequest extends Request {
@@ -21,7 +23,18 @@ export const ctrPdf = async (req:MulterRequest,res:Response):Promise<void> => {
         const pdfBuffer = fs.readFileSync(filePath)
 
         const data = await pdfParse(pdfBuffer)
-         res.status(200).json({text:data.text})
+        const parsedText:string = data.text
+        const textoOcr:TextoOcr = {text:parsedText}
+
+        const pdfRepository = new PdfRepository(); 
+        const savedTexto = await pdfRepository.create(textoOcr);
+        
+        if(savedTexto) {
+            res.status(200).json({message:"texto procesado y guardado con exito",data:savedTexto})
+        }else {
+            res.status(500).json({error:"error al guardar el texto en Base de datos"})
+        }
+
     }catch(error){
         console.error('Error al procesar el PDF',error)
          res.status(500).json({error:'Error al procesar el pdf'})
