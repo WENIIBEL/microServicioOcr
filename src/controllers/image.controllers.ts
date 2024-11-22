@@ -1,5 +1,7 @@
 import { Request,Response } from "express";
 import { createWorker } from "tesseract.js";
+import { ImageRepository } from "../repositories/image.repository";
+import { TextoOcr } from "../domain/models/textoOcr";
 
 
 // aquí va la logica en general
@@ -24,6 +26,13 @@ export const CtrlImage = async (req:MulterRequest, res:Response):Promise<void> =
         console.log(ret.data.text);
         console.log("funciona")
         await worker.terminate();
+
+        const imageRepository = new ImageRepository()
+        const textoOcr: TextoOcr = {
+          id: 'generate-id',
+          id_prescription: 'prescription-id',
+          text: text
+        }
 
       
         res.status(200).json({ message: "texto reconocido:", text });

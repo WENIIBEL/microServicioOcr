@@ -1,7 +1,7 @@
 
 export class  TextoOcr {
-    id:number;
-    id_prescription:number;
+    id:number ;
+    id_prescription:number ;
     text: string;
 
     /**
