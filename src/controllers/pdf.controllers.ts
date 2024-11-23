@@ -1,14 +1,11 @@
 
 import { Request,Response } from "express";
 import pdfParse from 'pdf-parse';
-import fs, { promises } from 'fs';
+import fs, {} from 'fs';
 import { TextoOcr } from "../domain/models/textoOcr";
 import { PdfRepository } from "../repositories/pdf.repository";
+import { MulterRequest } from "../domain/models/multeReques";
 
-
-interface MulterRequest extends Request {
-    file?:Express.Multer.File 
-} 
 
 export const ctrPdf = async (req:MulterRequest,res:Response):Promise<void> => {
 

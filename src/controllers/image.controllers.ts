@@ -1,16 +1,14 @@
-import { Request,Response } from "express";
+import { Response } from "express";
 import { createWorker } from "tesseract.js";
 import { ImageRepository } from "../repositories/image.repository";
 import { TextoOcr } from "../domain/models/textoOcr";
+import { MulterRequest } from "../domain/models/multeReques";
 
 
-// aquí va la logica en general
 
-interface MulterRequest extends Request {
-    file?:Express.Multer.File
-} 
 
-export const CtrlImage = async (req:MulterRequest, res:Response):Promise<void> => {
+
+export const  CtrlImage   = async (req:MulterRequest, res:Response):Promise<void> => {
  
     if (!req.file) {
         res.status(400).send("no se cargó ningú archivo");
@@ -20,7 +18,7 @@ export const CtrlImage = async (req:MulterRequest, res:Response):Promise<void> =
     try{
        
         const worker = await createWorker();
-        const ret = await worker.recognize(req.file?.path); // alamcena el resultado del conocimiento optico
+        const ret = await worker.recognize(req.file?.path); 
         const text = ret.data.text;
         await worker.terminate();
 
@@ -41,12 +39,9 @@ export const CtrlImage = async (req:MulterRequest, res:Response):Promise<void> =
         }
          
         
-    }catch (error) {
-        if (error instanceof Error) {
-          // instanceof verifica si el erro es de tipo ERROR
+    }catch (error:any) {
+       
           res.status(500).send(`error al procesar la imagen : ${error.message}`);
-        } else {
-          res.status(500).send("Error desconocido al procesar la imagen");
-        }
+      
       }
 }

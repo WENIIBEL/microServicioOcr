@@ -7,7 +7,7 @@ export class PdfRepository  {
 
     async create(body:TextoOcr): Promise< TextoOcr| null > {
         const connection = getPoolConnection()
-        const querySql: string = `INSERT INTO  texto_ocr (text) VALUES (?)`
+        const querySql: string = `INSERT INTO text_ocr  (text) VALUES (?)`
         const values: Array<string|number> = [
             body.text
         ]

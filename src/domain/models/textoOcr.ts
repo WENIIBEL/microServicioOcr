@@ -6,7 +6,6 @@ export class  TextoOcr {
    
     constructor(info:{
         id?:number;
-        id_prescription:number;
         text: string
     }) {
         this.id = info.id;
