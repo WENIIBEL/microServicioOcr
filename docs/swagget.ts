@@ -14,9 +14,18 @@ export const swaggerOptions = {
         },
         servers:[
             {
+                url:"http://localhost:3002",
+                description:"servidor local",
+
+
 
             }
-        ]
+        ],
+        phaths:{
+            "api/pdf":{
+                post:{}
+            }
+        }
       
       
 
