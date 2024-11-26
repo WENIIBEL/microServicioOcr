@@ -1,32 +1,43 @@
+import { imagesDoc } from "./image.docs";
+import { pdfDoc } from "./pdf.docs";
+
 export const swaggerOptions = {
-    
         openapi:"3.0.3",
         info:{
             title: "Api reconocimiento de texto",
             description: "Micro servicio de reconocimiento de texto",
             version:"1.0",
             constac:{
-                name:"wenn",
+                name:"PharmaCore Micro Servicio OCR",
                 email:"florezaraujo@hotmail.com"
-
             }
-      
         },
         servers:[
             {
                 url:"http://localhost:3002",
                 description:"servidor local",
-
-
-
             }
         ],
-        phaths:{
-            "api/pdf":{
-                post:{}
+        paths:{
+            "api/pdf":pdfDoc,
+            "api/images": imagesDoc
+        },
+        components:{
+            schemas:{
+                PDF:{
+                    type: "object",
+                    properties: {
+                        body: {type: "array"}
+                    },
+                    required: ["body"]
+                },
+                Images:{
+                    type: "object",
+                    properties: {
+                        body: {type: "array"}
+                    },
+                    required: ["body"]
+                }
             }
         }
-      
-      
-
 }
