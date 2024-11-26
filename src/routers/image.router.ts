@@ -3,7 +3,8 @@ import express from "express";
 import multer from "multer";
 import { CtrlImage } from "../controllers/image.controllers"; 
 import swaggerUi from "swagger-ui-express";
-import { swaggerOptions } from "../../docs/swagger";
+import { swaggerOptions } from "../../docs/swagget";
+
 
 
 

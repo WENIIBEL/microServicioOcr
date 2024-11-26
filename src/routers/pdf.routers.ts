@@ -3,7 +3,8 @@ import { ctrPdf } from "../controllers/pdf.controllers";
 import express from "express";
 import multer from "multer";
 import swaggerUi from "swagger-ui-express";
-import { swaggerOptions } from "../../docs/swagger";
+import { swaggerOptions } from "../../docs/swagget";
+
 
 const router = express.Router();
 const upload = multer({ dest: 'pdfs/' });
