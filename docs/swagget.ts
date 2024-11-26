@@ -1,4 +1,4 @@
-import { imagesDoc } from "./image.docs";
+import { imageDoc } from "./image.docs";
 import { pdfDoc } from "./pdf.docs";
 
 export const swaggerOptions = {
@@ -19,8 +19,8 @@ export const swaggerOptions = {
             }
         ],
         paths:{
-            "api/pdf":pdfDoc,
-            "api/images": imagesDoc
+            "/api/pdf":pdfDoc,
+            "/api/images": imageDoc,
         },
         components:{
             schemas:{

@@ -9,6 +9,6 @@ import { swaggerOptions } from "../../docs/swagget";
 
 
 export const routerImage = express.Router()
-    const upload = multer({dest: 'imagess/'  })
+    const upload = multer({dest: 'images/'  })
     routerImage.use(`/docs`,swaggerUi.serve, swaggerUi.setup(swaggerOptions))
-    routerImage.post('/imagess', upload.single('image'), CtrlImage)
+    routerImage.post('/images', upload.single('image'), CtrlImage)

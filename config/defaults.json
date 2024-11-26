@@ -5,7 +5,7 @@
     "PASSWORD": "",
     "DATABASE": "",
     "REPORT_IMAGE": {
-    "URL": "http://localhost:3002/api/imagess"
+    "URL": "http://localhost:3002/api/images"
 
   },
   "REPORT_PDF": {
