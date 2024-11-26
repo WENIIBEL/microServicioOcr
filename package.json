@@ -4,6 +4,7 @@
   "description": "prodando ocrm",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon -e ts,json --exec ts-node index.ts ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "wenn",

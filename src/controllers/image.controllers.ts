@@ -18,7 +18,7 @@ export const  CtrlImage   = async (req:MulterRequest, res:Response):Promise<void
     try{
        
         const worker = await createWorker();
-        const ret = await worker.recognize(req.file?.path); 
+        const ret = await worker.recognize(req.file?.buffer); 
         const text = ret.data.text;
         await worker.terminate();
 
