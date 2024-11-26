@@ -33,7 +33,7 @@ export const  CtrlImage   = async (req:MulterRequest, res:Response):Promise<void
         const saveImage = await imageRepository.create(textoOcr)
 
         if (saveImage) {
-          res.status(200).json({message:"texto reconocido y guardado"})
+          res.status(200).json(saveImage)
         }else {
           res.status(500).send("Error desconocido al procesar la imagen")
         }

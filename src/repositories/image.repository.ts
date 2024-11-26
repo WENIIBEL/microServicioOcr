@@ -11,8 +11,13 @@ export class ImageRepository  {
         const values: Array<string|number> = [
             body.text
         ]
-        const result:[ResultSetHeader, FieldPacket[]] = await connection.query(querySql,values)
-        return result[0].affectedRows ==1? body:null
+        const [result]:[ResultSetHeader, FieldPacket[]] = await connection.query(querySql,values)
+        if (result.affectedRows >0) {
+            return body
+        }else {
+            return null;
+        }
+        
  
     }
 }
