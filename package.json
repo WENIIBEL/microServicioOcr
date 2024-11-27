@@ -4,7 +4,7 @@
   "description": "prodando ocrm",
   "main": "index.js",
   "scripts": {
-    "build":"tsc",
+    "build": "tsc",
     "start": "node dist/index.js",
     "dev": "nodemon -e ts,json --exec ts-node index.ts ",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +12,9 @@
   "author": "wenn",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.17",
     "config": "^3.3.12",
+    "cors": "^2.8.5",
     "express": "^4.21.1",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.11.4",
