@@ -3,15 +3,7 @@
     "DB_PORT": 43649,
     "USER": "",
     "PASSWORD": "",
-    "DATABASE": "",
-    "REPORT_IMAGE": {
-    "URL": "http://localhost:3002/api/images"
-
-  },
-  "REPORT_PDF": {
-    "URL": "http://localhost:3002/api/pdf"
-    
-  }
+    "DATABASE": ""
   
   }
 
