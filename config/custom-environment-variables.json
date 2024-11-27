@@ -1,9 +1,9 @@
 {
-    "HOST": "DB_HOST",
+    "DB_HOST": "DB_HOST",
     "DB_PORT": "DB_PORT",
-    "USER": "DB_USER",
+    "DB_USER": "DB_USER",
     "DB_TYPE":"DB_TYPE",
-    "PASSWORD": "DB_PASSWORD",
+    "DB_PASSWORD": "DB_PASSWORD",
     "DATABASE": "DATABASE"
    
   }
