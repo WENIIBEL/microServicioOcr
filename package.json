@@ -4,6 +4,8 @@
   "description": "prodando ocrm",
   "main": "index.js",
   "scripts": {
+    "build":"tsc",
+    "start": "node dist/index.js",
     "dev": "nodemon -e ts,json --exec ts-node index.ts ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
