@@ -1,7 +1,6 @@
 
 import { Router } from "express";
 import multer from "multer";
-import { Request, Response } from "express";
 import { swaggerOptions } from "../../docs/swagget";
 import swaggerUi from "swagger-ui-express";
 import { CtrlImage } from "../controllers/image.controllers";
