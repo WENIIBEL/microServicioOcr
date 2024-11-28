@@ -12,7 +12,7 @@ const port = 3002;
 app.use(express.json());
 
 
-app.use("/api/v1", routes())
+app.use("/api/v1/ocr", routes())
 
 app.use(middleware404);
 
